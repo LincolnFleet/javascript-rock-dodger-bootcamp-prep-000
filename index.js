@@ -45,7 +45,7 @@ function checkCollision(rock) {
                *    and the rock's right edge is < the DODGER's right edge;
                * 3. The rock's left edge is < the DODGER's right edge,
                *    and the rock's right edge is > the DODGER's right edge
-               */) {(rockRightEdge > dodgerLeftEdge && rockRightEdge < dodgerRightEdge-40) || (rockLeftEdge < dodgerRightEdge && rockLeftEdge > dodgerLeftEdge+40)}
+               */) {(rockRightEdge < dodgerLeftEdge && rockRightEdge < dodgerRightEdge-40) || (rockLeftEdge > dodgerRightEdge && rockLeftEdge > dodgerLeftEdge+40)}
       return true
     }
   }
@@ -73,13 +73,17 @@ function createRock(x) {
    * seems like a good pace.)
    */
   function moveRock() {
+
     // implement me!
     // (use the comments below to guide you!)
     /**
      * If a rock collides with the DODGER,
      * we should call endGame()
      */
-
+     if (checkCollision() = true) {
+       endGame();
+       return;
+     }
     /**
      * Otherwise, if the rock hasn't reached the bottom of
      * the GAME, we want to move it again.
