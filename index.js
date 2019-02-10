@@ -73,7 +73,6 @@ function createRock(x) {
    * seems like a good pace.)
    */
   function moveRock() {
-
     // implement me!
     // (use the comments below to guide you!)
     /**
@@ -88,11 +87,18 @@ function createRock(x) {
      * Otherwise, if the rock hasn't reached the bottom of
      * the GAME, we want to move it again.
      */
-
+     elseif (top < GAME_HEIGHT) {
+       var top = top -2;
+     }
     /**
      * But if the rock *has* reached the bottom of the GAME,
      * we should remove the rock from the DOM
      */
+     elseif (top >= GAME_HEIGHT) {
+       function dropOff() {
+         ROCKS = ROCKS.shift();
+       }
+     }
   }
 
   // We should kick of the animation of the rock around here
