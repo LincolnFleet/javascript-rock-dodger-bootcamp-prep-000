@@ -103,8 +103,7 @@ function endGame() {
   moveDodger.remove;
   if (confirm("Anyway, you lost... and yet not all is lost. Try again?")) {
     start();
-  }
-  else {
+  } else {
     window.close();
   }
   alert("#BoxFriendNotFood")
@@ -150,7 +149,7 @@ function moveDodgerLeft() {
    * This function should move DODGER to the left
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
-   if (dodgerLeftEdge >1) {
+   if (dodgerLeftEdge >=4) {
      DODGER.style.left = DODGER.style.left - 4;
    }
 }
@@ -161,7 +160,7 @@ function moveDodgerRight() {
    * This function should move DODGER to the right
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
-   if (dodgerRightEdge <400) {
+   if (dodgerRightEdge <=396) {
      DODGER.style.left = DODGER.style.left + 4;
    }
 }
