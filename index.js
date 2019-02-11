@@ -42,9 +42,9 @@ function checkCollision(rock) {
                *    and the rock's right edge is > the DODGER's right edge
                */) {(rockRightEdge < dodgerLeftEdge && rockRightEdge < dodgerRightEdge-40) || (rockLeftEdge > dodgerRightEdge && rockLeftEdge > dodgerLeftEdge+40)}
       return true
-    }
   }
 }
+
 
 function createRock(x) {
   var rock = document.createElement('div')
@@ -89,17 +89,13 @@ function createRock(x) {
        }
      }
   }
-
   // We should kick of the animation of the rock around here
-
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision
   ROCKS.push(rock)
-
   // Finally, return the rock element you've created
   return rock
 }
-
 /**
  * End the game by clearing `gameInterval`,
  * removing all ROCKS from the DOM,
