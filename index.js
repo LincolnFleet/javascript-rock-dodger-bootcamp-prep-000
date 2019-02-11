@@ -95,15 +95,15 @@ function endGame() {
   gameInterval = null;
   ROCKS.remove;
   moveDodger.remove;
-  if (confirm("Anyway, you lost... and yet all is not lost. Try again?")) {
+  if (confirm("Anyway, you lost... and yet not all is lost. Try again?")) {
     start();
   }
   else {
-    return
+    window.close();
   }
   alert("#BoxFriendNotFood")
   alert("And about the scourge of box cannibalism.");
-  alert("Still here huh? Must be a glutton for punishment. I guess we all learned something about ourselves today.");
+  alert("Still here, huh? Must be a glutton for punishment. I guess we all learned something about ourselves today.");
   alert("...");
   alert("And by 'psychopaths' I guess I mean me.");
   alert("And by 'they' I mean psychopaths.");
