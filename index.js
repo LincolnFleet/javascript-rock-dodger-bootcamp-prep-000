@@ -20,21 +20,23 @@ var gameInterval = null
 function checkCollision(dodgeThis) {
   // implement me!
   // use the comments below to guide you!
-  const top = positionToInteger(dodgeThis.style.top);
+  const top = positionToInteger(`${dodgeThis}`.style.top);
   // rocks are 20px high
   // DODGER is 20px high
   // GAME_HEIGHT - 20 - 20 = 360px;
   // FIXME: The DODGER is 40 pixels wide -- how do we get the right edge?
   // FIXME: The rock is 20 pixel's wide -- how do we get the right edge?
-  if (top > 360) && (true) {
+  if (top > 360) && (
     const dodgerLeftEdge = positionToInteger(DODGER.style.left)-20;
     const dodgerRightEdge = positionToInteger(DODGER.style.left)+20;
-    const rockLeftEdge = positionToInteger(dodgeThis.style.left)-10;
-    const rockRightEdge = positionToInteger(dodgeThis.style.left)+10;
-      (rockRightEdge >= dodgerLeftEdge && rockRightEdge >= dodgerRightEdge-40) || (rockLeftEdge <= dodgerRightEdge && rockLeftEdge <= dodgerLeftEdge+40)
+    const rockLeftEdge = positionToInteger(`${dodgeThis}`.style.left)-10;
+    const rockRightEdge = positionToInteger(`${dodgeThis}`.style.left)+10;
+    (rockRightEdge >= dodgerLeftEdge && rockRightEdge >= dodgerRightEdge-40)||(rockLeftEdge <= dodgerRightEdge && rockLeftEdge <= dodgerLeftEdge+40)
+   ){
+    return true;
   }
-  return true
 }
+
 function createRock(x) {
   var rock = document.createElement('div')
   rock.className = 'rock'
