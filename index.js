@@ -95,7 +95,28 @@ function endGame() {
   gameInterval = null;
   ROCKS.remove;
   moveDodger.remove;
-  alert("You lose. Try again?")
+  if (confirm("Anyway, you lost... and yet all is not lost. Try again?")) {
+    start();
+  }
+  else {
+    return
+  }
+  alert("#BoxFriendNotFood")
+  alert("And about the scourge of box cannibalism.");
+  alert("Still here huh? Must be a glutton for punishment. I guess we all learned something about ourselves today.");
+  alert("...");
+  alert("And by 'psychopaths' I guess I mean me.");
+  alert("And by 'they' I mean psychopaths.");
+  alert("I mean, they do say that pain is the best teacher.");
+  alert("Rather than crushing your soul.");
+  alert("So think of this as improving your resolve.");
+  alert("... but without consequence, there's no motivation to improve!");
+  alert("I'm sorry to have to do this to you...");
+  alert("As punishment, you have to click your way through all of these annoying alerts.");
+  alert("Which is another way of saying 'You lose'.");
+  alert("And nobody wins when cannibalism is involved.");
+  alert("Basically, box cannibalism.");
+  alert("Your box got crushed by one of the other boxes.");
 }
 
 function moveDodger(e) {
