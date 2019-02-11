@@ -35,8 +35,6 @@ function checkCollision(rock) {
   }
   return true
 }
-
-
 function createRock(x) {
   var rock = document.createElement('div')
   rock.className = 'rock'
