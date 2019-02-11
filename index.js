@@ -71,14 +71,14 @@ function createRock(x) {
      * Otherwise, if the rock hasn't reached the bottom of
      * the GAME, we want to move it again.
      */
-     elseif (top < GAME_HEIGHT) {
+     else if (top < GAME_HEIGHT) {
        var top = top +2;
      }
     /**
      * But if the rock *has* reached the bottom of the GAME,
      * we should remove the rock from the DOM
      */
-     elseif (top >= GAME_HEIGHT) {
+     else if (top >= GAME_HEIGHT) {
        function dropOff() {
          ROCKS = ROCKS.shift();
        }
@@ -138,7 +138,7 @@ function moveDodger(e) {
      if (event.which === 37) {
        window.requestAnimationFrame(moveDodgerLeft());
      }
-     elseif (event.which === 39) {
+     else if (event.which === 39) {
        window.requestAnimationFrame(moveDodgerRight());
      }
    })
