@@ -36,8 +36,6 @@ function checkCollision(dodgeThis) {
       } else {
         return false;
       }
-  } else {
-    return false;
   }
 }
 
