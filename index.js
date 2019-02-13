@@ -136,14 +136,12 @@ function moveDodger(e) {
    * we've declared for you above.)
    * And be sure to use the functions declared below!
    */
-   window.addEventListener('keydown', event => {
-     if (event.which === 37) {
-       window.requestAnimationFrame(moveDodgerLeft());
+   if (e.which === 37) {
+       moveDodgerLeft();
      }
-     else if (event.which === 39) {
-       window.requestAnimationFrame(moveDodgerRight());
+     else if (e.which === 39) {
+       moveDodgerRight();
      }
-   })
 }
 
 function moveDodgerLeft() {
@@ -157,7 +155,9 @@ function moveDodgerLeft() {
      DODGER.style.left = DODGER.style.left - 4;
      window.requestAnimationFrame(step());
     }
-   }
+  } else {
+    return
+  }
 }
 
 function moveDodgerRight() {
@@ -168,10 +168,12 @@ function moveDodgerRight() {
    */
    if (DODGER.style.left <376) {
      function step() {
-     DODGER.style.left = DODGER.style.left) + 4;
+     DODGER.style.left = DODGER.style.left + 4;
      window.requestAnimationFrame(step());
     }
-   }
+  } else {
+    return
+  }
 }
 
 
