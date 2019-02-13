@@ -31,7 +31,7 @@ function checkCollision(dodgeThis) {
     const dodgerRightEdge = positionToInteger(DODGER.style.left)+20;
     const rockLeftEdge = positionToInteger(dodgeThis.style.left)-10;
     const rockRightEdge = positionToInteger(dodgeThis.style.left)+10;
-      if ((rockRightEdge >= dodgerLeftEdge && rockRightEdge >= dodgerRightEdge-40)||(rockLeftEdge <= dodgerRightEdge && rockLeftEdge <= dodgerLeftEdge+40)) {
+      if ((rockRightEdge > dodgerLeftEdge && rockRightEdge > dodgerRightEdge-40)||(rockLeftEdge < dodgerRightEdge && rockLeftEdge < dodgerLeftEdge+40)) {
         return true;
       } else {
         return false;
@@ -71,8 +71,11 @@ function createRock(x) {
      * Otherwise, if the rock hasn't reached the bottom of
      * the GAME, we want to move it again.
      */
-     else if (top < GAME_HEIGHT) {
+     else if (top < GAME_HEIGHT-20) {
+       function step() {
        var top = top +2;
+       window.requestAnimationFrame(step())
+      }
      }
     /**
      * But if the rock *has* reached the bottom of the GAME,
@@ -149,8 +152,11 @@ function moveDodgerLeft() {
    * This function should move DODGER to the left
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
-   if (dodgerLeftEdge >=4) {
+   if (DODGER.style.left >24) {
+     function step() {
      DODGER.style.left = DODGER.style.left - 4;
+     window.requestAnimationFrame(step());
+    }
    }
 }
 
@@ -160,8 +166,11 @@ function moveDodgerRight() {
    * This function should move DODGER to the right
    * (mabye 4 pixels?). Use window.requestAnimationFrame()!
    */
-   if (dodgerRightEdge <=396) {
-     DODGER.style.left = DODGER.style.left + 4;
+   if (DODGER.style.left <376) {
+     function step() {
+     DODGER.style.left = DODGER.style.left) + 4;
+     window.requestAnimationFrame(step());
+    }
    }
 }
 
