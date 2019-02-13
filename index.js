@@ -154,7 +154,7 @@ function moveDodgerLeft() {
    */
    if (dodgerCoord >24) {
      function step() {
-     DODGER.style.left = dodgerCoord - 4 + "px";
+     DODGER.style.left = dodgerCoord - 4 + 'px';
      window.requestAnimationFrame(step());
     }
   } else {
